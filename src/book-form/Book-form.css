@@ -1,0 +1,39 @@
+.Book-form {
+  padding: 5rem;
+  margin-top: 10%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .book-item {
+  margin-bottom: 20px;
+} */
+
+.book-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 20%;
+  max-width: 250px;
+}
+
+.book-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.book-details {
+  margin-top: 10px;
+}
+
+.book-detail {
+  margin-bottom: 5px;
+}
+
+.not-available {
+  color: red;
+}
