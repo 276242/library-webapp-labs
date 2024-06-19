@@ -12,24 +12,24 @@ interface Book {
 }
 
 const books: Book[] = [
-  {
-    id: 1,
-    title: 'Book 1',
-    author: 'Author 1',
-    isbn: '123456789',
-    publisher: 'ABC Publisher',
-    publicationYear: 2002,
-    availableCopies: 5,
-  },
-  {
-    id: 2,
-    title: 'Book 2',
-    author: 'Author 2',
-    isbn: '987654321',
-    publisher: 'XYZ Publisher',
-    publicationYear: 2005,
-    availableCopies: 0,
-  },
+  // {
+  //   id: 1,
+  //   title: 'Book 1',
+  //   author: 'Author 1',
+  //   isbn: '123456789',
+  //   publisher: 'ABC Publisher',
+  //   publicationYear: 2002,
+  //   availableCopies: 5,
+  // },
+  // {
+  //   id: 2,
+  //   title: 'Book 2',
+  //   author: 'Author 2',
+  //   isbn: '987654321',
+  //   publisher: 'XYZ Publisher',
+  //   publicationYear: 2005,
+  //   availableCopies: 0,
+  // },
 ];
 
 function BookList() {

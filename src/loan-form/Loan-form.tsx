@@ -1,41 +1,32 @@
-
+import './Loan-form.css';
 import { List, ListItem, ListItemText } from '@mui/material';
 
-interface Book {
+interface Loan {
   id: number;
-  isbn: string;
-  title: string;
-  author: string;
-  publisher: string;
-  publicationYear: number;
-  availableCopies: number;
+  loanDate: Date;
+  dueDate: Date;
+  returnDate: Date;
 }
 
-const books: Book[] = [
+const loans: Loan[] = [
   {
     id: 1,
-    title: 'Book 1',
-    author: 'Author 1',
-    isbn: '123456789',
-    publisher: 'ABC Publisher',
-    publicationYear: 2002,
-    availableCopies: 5,
+    loanDate: new Date('2021-10-01'),
+    dueDate: new Date('2021-10-15'),
+    returnDate: new Date('2021-10-15'),
   },
   {
     id: 2,
-    title: 'Book 2',
-    author: 'Author 2',
-    isbn: '987654321',
-    publisher: 'XYZ Publisher',
-    publicationYear: 2005,
-    availableCopies: 0,
+    loanDate: new Date('2021-10-02'),
+    dueDate: new Date('2021-10-16'),
+    returnDate: new Date('2021-10-16'),
   },
 ];
 
-function BookList() {
+function LoanList() {
   return (
     <List>
-      {books.map((book) => (
+      {loans.map((loan) => (
         // <ListItem key={book.id} className="book-item">
         //   <ListItemText
         //     primary={book.title}
@@ -56,26 +47,14 @@ function BookList() {
         //   />
         // </ListItem>
 
-        <ListItem key={book.id} className="book-container">
+        <ListItem key={loan.id} className="loan-container">
           <ListItemText
-            primary={book.title}
-            className="book-title"
+            primary={loan.id}
             secondary={
-              <div className="book-details">
-                <div className="book-detail">Author: {book.author}</div>
-                <div className="book-detail">ISBN: {book.isbn}</div>
-                <div className="book-detail">Publisher: {book.publisher}</div>
-                <div className="book-detail">
-                  Publication Year: {book.publicationYear}
-                </div>
-                <div
-                  className={`book-detail ${book.availableCopies > 0 ? '' : 'not-available'}`}
-                >
-                  Available Copies:{' '}
-                  {book.availableCopies > 0
-                    ? book.availableCopies
-                    : 'Not available'}
-                </div>
+              <div>
+                <div>Loan Date: {loan.loanDate.toDateString()}</div>
+                <div>Due Date: {loan.dueDate.toDateString()}</div>
+                <div>Return Date: {loan.returnDate.toDateString()}</div>
               </div>
             }
           />
@@ -85,4 +64,4 @@ function BookList() {
   );
 }
 
-export default BookList;
+export default LoanList;
