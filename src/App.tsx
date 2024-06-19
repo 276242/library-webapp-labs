@@ -16,17 +16,15 @@ function App() {
           <Route path="/home" element={<HomePage />}>
             <Route
               path="books"
-              element={
-                <div
-                  style={{
-                    height: 800,
-                    width: '100%',
-                    backgroundColor: 'bisque',
-                  }}
-                >
-                  <BookList />
-                </div>
-              }
+              // element={
+              //   <div
+              //     style={{
+              //       height: 800,
+              //       width: '100%',
+              //       backgroundColor: 'bisque',
+              //     }}
+              //   ></div>
+              // }
             />
             <Route
               path="loans"

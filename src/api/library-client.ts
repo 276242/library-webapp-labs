@@ -28,20 +28,16 @@ export class LibraryClient {
         data,
       );
 
-      console.log(response.data.token);
+      // console.log(response.data.token);
 
       this.client.defaults.headers.common['Authorization'] =
         `Bearer ${response.data.token}`;
-
 
       return {
         success: true,
         data: response.data,
         status: response.status,
       };
-
-      
-
     } catch (error) {
       const axiosError = error as AxiosError<Error>;
 
@@ -56,9 +52,15 @@ export class LibraryClient {
   public async getBooks(): Promise<ClientResponse<any | null>> {
     try {
       const response = await this.client.get('/books');
-      return response.data;
+
+      return {
+        success: true,
+        data: response.data,
+        status: response.status,
+      };
     } catch (error) {
       const axiosError = error as AxiosError<Error>;
+
       return {
         success: false,
         data: null,

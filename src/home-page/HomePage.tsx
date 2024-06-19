@@ -3,12 +3,22 @@ import { MenuAppBar } from '../menu-app-bar/MenuAppBar';
 import { Link, Outlet, Routes, Route } from 'react-router-dom';
 import { useApi } from '../api/ApiProvide';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
+import BookList from '../book-form/Book-form';
 
 export default function HomePage() {
   const { t } = useTranslation();
   const apiClient = useApi();
+  const [books, setBooks] = useState([]);
 
-  apiClient.getBooks().then((response) => console.log(response));
+  useEffect(() => {
+    apiClient.getBooks().then((response) => {
+      console.log(response);
+      if (response.success) {
+        setBooks(response.data!);
+      }
+    });
+  }, [apiClient]);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -21,6 +31,9 @@ export default function HomePage() {
           {t('loans')}
         </Button>
       </Box>
+      <Routes>
+        <Route path="books" element={<BookList books={books} />} />
+      </Routes>
       <Outlet />
     </Box>
   );

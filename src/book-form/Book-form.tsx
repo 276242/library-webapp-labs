@@ -8,54 +8,18 @@ interface Book {
   author: string;
   publisher: string;
   publicationYear: number;
-  availableCopies: number;
+  available: boolean;
+  //availableCopies: number;
 }
 
-const books: Book[] = [
-  // {
-  //   id: 1,
-  //   title: 'Book 1',
-  //   author: 'Author 1',
-  //   isbn: '123456789',
-  //   publisher: 'ABC Publisher',
-  //   publicationYear: 2002,
-  //   availableCopies: 5,
-  // },
-  // {
-  //   id: 2,
-  //   title: 'Book 2',
-  //   author: 'Author 2',
-  //   isbn: '987654321',
-  //   publisher: 'XYZ Publisher',
-  //   publicationYear: 2005,
-  //   availableCopies: 0,
-  // },
-];
+interface BookListProps {
+  books: Book[];
+}
 
-function BookList() {
+function BookList({ books }: BookListProps) {
   return (
     <List>
       {books.map((book) => (
-        // <ListItem key={book.id} className="book-item">
-        //   <ListItemText
-        //     primary={book.title}
-        //     secondary={
-        //       <div>
-        //         <div>Author: {book.author}</div>
-        //         <div>ISBN: {book.isbn}</div>
-        //         <div>Publisher: {book.publisher}</div>
-        //         <div>Publication Year: {book.publicationYear}</div>
-        //         <div>
-        //           Available Copies:{' '}
-        //           {book.availableCopies > 0
-        //             ? book.availableCopies
-        //             : 'Not available'}
-        //         </div>
-        //       </div>
-        //     }
-        //   />
-        // </ListItem>
-
         <ListItem key={book.id} className="book-container">
           <ListItemText
             primary={book.title}
@@ -68,14 +32,17 @@ function BookList() {
                 <div className="book-detail">
                   Publication Year: {book.publicationYear}
                 </div>
-                <div
+                <div className="book-detail">
+                  Available: {book.available ? 'Yes' : 'No'}
+                </div>
+                {/* <div
                   className={`book-detail ${book.availableCopies > 0 ? '' : 'not-available'}`}
                 >
                   Available Copies:{' '}
                   {book.availableCopies > 0
                     ? book.availableCopies
                     : 'Not available'}
-                </div>
+                </div> */}
               </div>
             }
           />
