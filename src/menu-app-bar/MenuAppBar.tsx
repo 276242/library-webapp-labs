@@ -4,12 +4,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 
 export function MenuAppBar() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
-  const {t} = useTranslation();
-
+  const toggleLanguage = () => {
+    const newLanguage = i18n.language === 'pl' ? 'en' : 'pl';
+    i18n.changeLanguage(newLanguage);
+  };
 
   return (
     <AppBar position="static">
@@ -38,7 +42,16 @@ export function MenuAppBar() {
             // component={Link}
             // to={'/login'}
           >
-            <AccountCircle></AccountCircle>
+            <AccountCircle />
+          </IconButton>
+
+          <IconButton
+            size="small"
+            color="inherit"
+            aria-label="toggle language"
+            onClick={toggleLanguage}
+          >
+            {i18n.language === 'pl' ? 'EN' : 'PL'}
           </IconButton>
         </Box>
       </Toolbar>

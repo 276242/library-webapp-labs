@@ -1,5 +1,17 @@
 import './Book-form.css';
-import { List, ListItem, ListItemText } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from '@mui/material';
+import RemoveIcon from '@mui/icons-material/Remove';
+import { t } from 'i18next';
 
 interface Book {
   id: number;
@@ -14,42 +26,86 @@ interface Book {
 
 interface BookListProps {
   books: Book[];
+  onDelete: (id: number) => void;
 }
 
-function BookList({ books }: BookListProps) {
+function BookList({ books, onDelete }: BookListProps) {
   return (
-    <List>
+    <Grid container spacing={3}>
       {books.map((book) => (
-        <ListItem key={book.id} className="book-container">
-          <ListItemText
-            primary={book.title}
-            className="book-title"
-            secondary={
-              <div className="book-details">
-                <div className="book-detail">Author: {book.author}</div>
-                <div className="book-detail">ISBN: {book.isbn}</div>
-                <div className="book-detail">Publisher: {book.publisher}</div>
-                <div className="book-detail">
-                  Publication Year: {book.publicationYear}
+        <Grid item key={book.id} xs={12} sm={6} md={4} lg={3}>
+          <Card className="book-card" variant="outlined">
+            {/* <CardMedia
+              component="img"
+              height="140"
+              image={book.image}
+              alt={book.title}
+            /> */}
+            <CardContent>
+              <div style={{ position: 'relative' }}>
+                <Typography variant="h6" component="div">
+                  {book.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {t('author')}: {book.author}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {t('isbn')}: {book.isbn}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {t('publisher')}: {book.publisher}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {t('publicationYear')}: {book.publicationYear}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {t('available')}: {book.available ? t('Yes') : t('No')}
+                </Typography>
+                <div style={{ position: 'absolute', top: 0, right: 0 }}>
+                  <IconButton
+                    color="secondary"
+                    aria-label="delete"
+                    // disabled={!book.available}
+                    onClick={() => onDelete(book.id)}
+                  >
+                    <RemoveIcon />
+                  </IconButton>
                 </div>
-                <div className="book-detail">
-                  Available: {book.available ? 'Yes' : 'No'}
-                </div>
-                {/* <div
-                  className={`book-detail ${book.availableCopies > 0 ? '' : 'not-available'}`}
-                >
-                  Available Copies:{' '}
-                  {book.availableCopies > 0
-                    ? book.availableCopies
-                    : 'Not available'}
-                </div> */}
               </div>
-            }
-          />
-        </ListItem>
+            </CardContent>
+          </Card>
+        </Grid>
       ))}
-    </List>
+    </Grid>
   );
 }
+
+// function BookList({ books }: BookListProps) {
+//   return (
+//     <List>
+//       {books.map((book) => (
+//         <ListItem key={book.id} className="book-container">
+//           <ListItemText
+//             primary={book.title}
+//             className="book-title"
+//             secondary={
+//               <div className="book-details">
+//                 <div className="book-detail">Author: {book.author}</div>
+//                 <div className="book-detail">ISBN: {book.isbn}</div>
+//                 <div className="book-detail">Publisher: {book.publisher}</div>
+//                 <div className="book-detail">
+//                   Publication Year: {book.publicationYear}
+//                 </div>
+//                 <div className="book-detail">
+//                   Available: {book.available ? 'Yes' : 'No'}
+//                 </div>
+//               </div>
+//             }
+//           />
+//         </ListItem>
+//       ))}
+//     </List>
+//   );
+// }
 
 export default BookList;

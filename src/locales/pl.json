@@ -1,5 +1,27 @@
 {
   "library": "Biblioteka",
   "books": "Książki",
-  "loans": "Wypożyczenia"
+  "loans": "Wypożyczenia",
+  "search": "Szukaj",
+
+  "title": "Tytuł",
+  "author": "Autor",
+  "isbn": "ISBN",
+  "publisher": "Wydawca",
+  "publicationYear": "Rok publikacji",
+  "availableCopies": "Liczba Dostępnych Egzemplarzy",
+  "available": "Dostępne",
+
+  "Yes": "Tak",
+  "No": "Nie",
+  "confirm": "Potwierdź",
+
+  "addBook": "Dodaj książkę",
+
+  "isbnError": "ISBN nie może być pusty",
+  "titleError": "Tytuł nie może być pusty",
+  "authorError": "Autor nie może być pusty",
+  "publisherError": "Wydawca nie może być pusty",
+  "publicationYearError": "Rok publikacji musi być dodatni",
+  "availableCopiesError": "Książka musi mieć co najmniej jeden egzemplarz dostępny"
 }

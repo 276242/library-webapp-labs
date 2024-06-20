@@ -1,5 +1,27 @@
 {
   "library": "Library",
   "books": "Books",
-  "loans": "Loans"
+  "loans": "Loans",
+  "search": "Search",
+
+  "title": "Title",
+  "author": "Author",
+  "isbn": "ISBN",
+  "publisher": "Publisher",
+  "publicationYear": "Publication Year",
+  "availableCopies": "Number of Available Copies",
+  "available": "Available",
+
+  "Yes": "Yes",
+  "No": "No",
+  "confirm": "Confirm",
+
+  "addBook": "Add Book",
+
+  "isbnError": "ISBN can't be empty",
+  "titleError": "Title can't be empty",
+  "authorError": "Author can't be empty",
+  "publisherError": "Publisher can't be empty",
+  "publicationYearError": "Publication year must be a positive number",
+  "availableCopiesError": "At least one copy should be available"
 }

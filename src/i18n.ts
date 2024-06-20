@@ -18,6 +18,4 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
   resources,
 });
 
-i18n.changeLanguage('pl');
-
 export default i18n;
