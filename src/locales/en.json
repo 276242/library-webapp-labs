@@ -12,11 +12,19 @@
   "availableCopies": "Number of Available Copies",
   "available": "Available",
 
+  "bookTitle": "Book Title",
+  "user": "User",
+  "loanDate": "Loan Date",
+  "dueDate": "Due Date",
+
+
   "Yes": "Yes",
   "No": "No",
   "confirm": "Confirm",
+  "delete": "Delete",
 
   "addBook": "Add Book",
+  "addLoan": "Add Loan",
 
   "isbnError": "ISBN can't be empty",
   "titleError": "Title can't be empty",

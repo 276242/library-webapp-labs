@@ -28,15 +28,15 @@ function App() {
             />
             <Route
               path="loans"
-              element={
-                <div
-                  style={{
-                    height: 800,
-                    width: '100%',
-                    backgroundColor: 'burlywood',
-                  }}
-                />
-              }
+              // element={
+              //   <div
+              //     style={{
+              //       height: 800,
+              //       width: '100%',
+              //       backgroundColor: 'burlywood',
+              //     }}
+              //   />
+              // }
             />
           </Route>
           <Route path="/login" element={<LoginForm />} />

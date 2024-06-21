@@ -12,11 +12,18 @@
   "availableCopies": "Liczba Dostępnych Egzemplarzy",
   "available": "Dostępne",
 
+  "bookTitle": "Tytuł Książki",
+  "user": "Użytkownik",
+  "loanDate": "Data Wypożyczenia",
+  "dueDate": "Wymagana Data Zwrotu",
+
   "Yes": "Tak",
   "No": "Nie",
   "confirm": "Potwierdź",
+  "delete": "Usuń",
 
   "addBook": "Dodaj książkę",
+  "addLoan": "Dodaj wypożyczenie",
 
   "isbnError": "ISBN nie może być pusty",
   "titleError": "Tytuł nie może być pusty",

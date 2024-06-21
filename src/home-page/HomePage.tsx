@@ -9,13 +9,18 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddBookForm from '../book-form/AddBook-form';
 import type { BookFormValues } from '../book-form/AddBook-form';
+import { GetLoanResponseDto } from '../api/dto/get-loans-response.dto';
+import LoanList from '../loan-form/Loan-form';
 
 export default function HomePage() {
   const { t } = useTranslation();
   const apiClient = useApi();
+  const userId = localStorage.getItem('userId');
+  console.log(userId);
 
   // const [searchTerm, setSearchTerm] = useState('');
   const [books, setBooks] = useState<any>([]);
+  const [loans, setLoans] = useState<GetLoanResponseDto[]>([]);
   const [isAddBookFormVisible, setIsAddBookFormVisible] = useState(false);
 
   useEffect(() => {
@@ -25,7 +30,23 @@ export default function HomePage() {
         setBooks(response.data!);
       }
     });
+
+    const userId = localStorage.getItem('userId');
+    console.log(userId);
   }, [apiClient]);
+
+  useEffect(() => {
+    apiClient
+      .getLoansByUserId()
+      .then((response) => {
+        if (response.success) {
+          setLoans(response.data!);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [apiClient, userId]);
 
   const handleAddBook = (book: BookFormValues) => {
     setBooks((prevBooks: any) => [...prevBooks, book]);
@@ -115,6 +136,8 @@ export default function HomePage() {
           path="books"
           element={<BookList books={books} onDelete={handleDeleteBook} />}
         />
+        <Route path="loans"
+          element={<LoanList loans={loans} onDelete={handleDeleteBook} />} />
       </Routes>
       <Outlet />
     </Box>
