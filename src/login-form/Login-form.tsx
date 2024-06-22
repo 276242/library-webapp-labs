@@ -1,4 +1,4 @@
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Typography, colors } from '@mui/material';
 import './Login-form.css';
 import LoginIcon from '@mui/icons-material/Login';
 import { Formik } from 'formik';
@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import axios, { AxiosInstance } from 'axios';
 import { useApi } from '../api/ApiProvide';
+import { t } from 'i18next';
 
 //  baseURL: 'http://localhost:8082/api',
 
@@ -59,6 +60,7 @@ function LoginForm() {
           onSubmit={formik.handleSubmit}
           noValidate
         >
+          <h1>{t('Login')}</h1>
           <TextField
             id="username"
             label="Username"
@@ -84,6 +86,7 @@ function LoginForm() {
             variant="contained"
             startIcon={<LoginIcon />}
             type="submit"
+            sx={{ bgcolor: 'black', color: 'white' }}
             disabled={!formik.isValid && formik.dirty}
           >
             Sign in

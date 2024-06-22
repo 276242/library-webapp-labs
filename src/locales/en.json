@@ -3,6 +3,9 @@
   "books": "Books",
   "loans": "Loans",
   "search": "Search",
+  "home": "Home",
+  "Login": "Login",
+  "welcome": "Welcome to the library!",
 
   "title": "Title",
   "author": "Author",
@@ -16,11 +19,13 @@
   "user": "User",
   "loanDate": "Loan Date",
   "dueDate": "Due Date",
-
+  "selectBook": "Select Book",
 
   "Yes": "Yes",
   "No": "No",
   "confirm": "Confirm",
+  "submit": "Submit",
+  "cancel": "Cancel",
   "delete": "Delete",
 
   "addBook": "Add Book",
@@ -31,5 +36,13 @@
   "authorError": "Author can't be empty",
   "publisherError": "Publisher can't be empty",
   "publicationYearError": "Publication year must be a positive number",
-  "availableCopiesError": "At least one copy should be available"
+  "availableCopiesError": "At least one copy should be available",
+
+  "welcomeText": "Welcome to Your Library",
+  "welcomeText2": "Discover new books, manage loans, and explore your library resources.",
+
+  "exploreBooks": "Explore Books",
+  "manageLoans": "Manage Loans"
+
+
 }

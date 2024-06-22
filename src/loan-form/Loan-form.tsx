@@ -21,20 +21,40 @@ function LoanList({ loans, onDelete }: LoanListProps) {
     return date.toLocaleDateString();
   };
   return (
-    <Box>
-      <Typography variant="h2">{t('Loans')}</Typography>
-
+    <Box >
+      <Box display="flex" justifyContent="center">
+        <Typography variant="h3">{t('loans')}</Typography>
+      </Box>
+      <br />
+      <Box display="flex" justifyContent="center">
+        <Typography variant="h5">
+          {t('user')}: {loans.length > 0 ? loans[0].user.name : ''}{' '}
+          {loans.length > 0 ? loans[0].user.lastName : ''}
+        </Typography>
+      </Box>
+      <br />
+      <Box justifyContent="center" width={'50%'} >
       <List>
         {loans.map((loan) => (
           <ListItem key={loan.id}>
             <ListItemText
               primary={`${t('bookTitle')}: ${loan.book.title}`}
-              secondary={`${t('user')}: ${loan.user.name} ${loan.user.lastName}, ${t('loanDate')}: ${formatDate(loan.loanDate)}, ${t('dueDate')}: ${formatDate(loan.dueDate)}`}
+              secondary={
+                <div className="loan-details">
+                  <div className="loan-detail">
+                    {t('loanDate')}: {formatDate(loan.loanDate)}
+                  </div>
+                  <div className="loan-detail">
+                    {t('dueDate')}: {formatDate(loan.dueDate)}
+                  </div>
+                </div>
+              }
             />
-            <Button onClick={() => onDelete(loan.id)}>{t('Delete')}</Button>
+            <Button onClick={() => onDelete(loan.id)}>{t('delete')}</Button>
           </ListItem>
         ))}
       </List>
+      </Box>
     </Box>
   );
 }

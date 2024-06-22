@@ -153,11 +153,13 @@ export class LibraryClient {
     }
   }
 
-  public async getLoansByUserId(): Promise<ClientResponse<GetLoanResponseDto[] | null>> {
+  public async getLoansByUserId(): Promise<
+    ClientResponse<GetLoanResponseDto[]>
+  > {
     try {
       const userId = localStorage.getItem('userId');
       const response: AxiosResponse<GetLoanResponseDto[]> =
-        await this.client.get(`/loans/user/${userId}`);
+        await this.client.get(`/loans/user/${userId}`); // ${userId}
       return {
         success: true,
         data: response.data,
@@ -167,7 +169,7 @@ export class LibraryClient {
       const axiosError = error as AxiosError<Error>;
       return {
         success: false,
-        data: null,
+        data: [],
         status: axiosError.response?.status || 0,
       };
     }

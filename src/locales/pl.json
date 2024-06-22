@@ -3,6 +3,9 @@
   "books": "Książki",
   "loans": "Wypożyczenia",
   "search": "Szukaj",
+  "home": "Strona Główna",
+  "Login": "Logowanie",
+  "welcome": "Witamy w aplikacji Biblioteka!",
 
   "title": "Tytuł",
   "author": "Autor",
@@ -16,10 +19,13 @@
   "user": "Użytkownik",
   "loanDate": "Data Wypożyczenia",
   "dueDate": "Wymagana Data Zwrotu",
+  "selectBook": "Wybierz Ksiażkę",
 
   "Yes": "Tak",
   "No": "Nie",
   "confirm": "Potwierdź",
+  "submit": "Zatwierdź",
+  "cancel": "Anuluj",
   "delete": "Usuń",
 
   "addBook": "Dodaj książkę",
@@ -30,5 +36,11 @@
   "authorError": "Autor nie może być pusty",
   "publisherError": "Wydawca nie może być pusty",
   "publicationYearError": "Rok publikacji musi być dodatni",
-  "availableCopiesError": "Książka musi mieć co najmniej jeden egzemplarz dostępny"
+  "availableCopiesError": "Książka musi mieć co najmniej jeden egzemplarz dostępny",
+
+  "welcomeText": "Witamy w aplikacji Biblioteka!",
+  "welcomeText2": "Odkryj nowe ksiazki, zarzadzaj wypozyczeniami, i zobacz swoje biblioteczne zasoby.",
+
+  "exploreBooks": "Przeglądaj ksiazki",
+  "manageLoans": "Zarzadzaj wypożyczeniami"
 }
